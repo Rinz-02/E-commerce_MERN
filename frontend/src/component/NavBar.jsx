@@ -5,19 +5,8 @@ import { Link } from 'react-router-dom';
 import { CiSquarePlus } from "react-icons/ci";
 import { CiSun } from "react-icons/ci";
 import { AiOutlineMoon } from "react-icons/ai";
+import { useColorMode } from '../components/ui/color-mode.jsx';
 
-export function useColorMode() {
-  const { resolvedTheme, setTheme, forcedTheme } = useTheme()
-  const colorMode = forcedTheme || resolvedTheme
-  const toggleColorMode = () => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-  }
-  return {
-    colorMode: colorMode,
-    setColorMode: setTheme,
-    toggleColorMode,
-  }
-}
 
 export default function NavBar() {
   const {colorMode,toggleColorMode} = useColorMode();
