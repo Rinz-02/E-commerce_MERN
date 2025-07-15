@@ -39,7 +39,7 @@ export default function CreatePage() {
         <Heading as={'h1'} size={'4xl'} textAlign={'center'} mb={8} color={useColorModeValue('purple.500','cyan.400')} fontFamily={'cursive'}>
           Create New Product
         </Heading>
-        <Box w={'60%'} backgroundColor={useColorModeValue('white.100','gray.800')} rounded={'lg'} shadow={'md'} padding={7}>
+        <Box w={'60%'} backgroundColor={useColorModeValue('white.100','gray.800')} rounded={'lg'} shadow={'md'} padding={4}>
           <VStack spacing={6}  gapY={3}>
             <Input 
             placeholder='Name'

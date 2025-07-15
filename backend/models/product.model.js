@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
         require : true
     }
 },{
-    timestamps : true //Update or Create at field of doucuments
+    timestamps : true //Update or Create at all field of doucuments
 })
 
 const Product = mongoose.model('Product',productSchema);

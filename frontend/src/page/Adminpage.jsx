@@ -1,21 +1,16 @@
 import React, {  useEffect } from 'react'
 import { Container, VStack,Text, SimpleGrid } from '@chakra-ui/react'
 import { LinearGradient } from 'react-text-gradients'
-import { Link,useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useProductstore } from '../store/product.js'
-import HomeProductCard from '../component/HomeProductCard.jsx'
+import ProductCard from '../component/ProductCard.jsx'
 
 
-export default function HomePage() {
+export default function AdminPage() {
 
   const {fetchProducts,products} = useProductstore();
-  const navigate = useNavigate();
-  const role = localStorage.getItem("role")
   useEffect(() => {
     fetchProducts();
-    if(role === "admin"){
-      navigate('/login')
-    }
   },[fetchProducts]);
 
   return (
@@ -23,13 +18,13 @@ export default function HomePage() {
       <VStack spacing={8}>
         <Text fontWeight={'bold'} fontSize={'2xl'} py={6} mb={10}>
           <LinearGradient gradient={['to left', '#17acff ,#ff68f0']}>
-                  Current Products 🚀          
+                  Current Products 🚀        
         </LinearGradient>
         </Text>
 
         <SimpleGrid columns={[1,2,3]} gap={'30px'} w={'80%'}>
             {products.map((products) => (
-              <HomeProductCard key={products._id} products={products}/>
+              <ProductCard key={products._id} products={products}/>
             ))}
         </SimpleGrid>
 
